@@ -36,7 +36,6 @@
 	     :maphash-to-unordered-list
 	     :apply-compose
 	     :wrapping-result
-;;	     :collecting
 	     :hash-table-keys
 	     :hash-table-values
              :make-mock-mapper))
@@ -55,21 +54,6 @@
 (defun key-value->value (key value)
   (declare (ignore key))
   value)
-
-;; Actually, this is already in cl-utilities.. almost verbatim, amazing.
-#+nope
-(defmacro collecting (collector-name &body body)
-  (let ((head (gensym "COLLECTION-HEAD"))
-	(tail (gensym "COLLECTION-TAIL"))
-	(item (gensym "ITEM")))
-    `(let ((,tail nil)
-	   (,head nil))
-       (labels ((,collector-name (,item)
-		  (if (null ,head)
-		      (setf ,tail (setf ,head (cons ,item nil)))
-		      (setf ,tail (setf (cdr ,tail) (cons ,item nil))))))
-	 ,@body
-	 ,head))))
 
 (defun apply-compose (&rest functions)
   #'(lambda (&rest arguments)
