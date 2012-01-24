@@ -1,0 +1,19 @@
+Personal Lisp utility functions and macros that are not part of
+any larger module suitable for general release. I use some of
+these functions across projects, academic and personal, to avoid
+continually reinventing the oddly-shaped wheels to my liking.
+
+Occasionally some terrible ideas or implementations will slip
+into the library this library -- use your judgement.
+In particular I find myself reinventing some tools that have
+already been written or are even standard -- such
+as CL-UTILITIES:COLLECTING and DESTRUCTURING-BIND -- before I
+learn of their existence. I try to eliminate such redundancies.
+
+As this is a "personal" utility library I feel no particular
+obligation to present a consistent API. Feel free to copy
+anything you like, or to use a snapshot, but depending on
+up-to-date versions of this package is probably a bad idea
+for any projects not maintained by me personally. If you
+feel something is of general interest and should be in its own
+package, feel free to contact me (or just fork it off yourself).
